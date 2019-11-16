@@ -86,7 +86,6 @@ export default class MyMaskedView extends React.Component {
       <Animated.View style={{flex:1, backgroundColor: rValInt, opacity: opacity1 }}>
         <Animated.Code>
           {() => block([
-
             set(progress, loop({ clock, duration: 4000, easing: Easing.linear})),
             set(progress2, loop({ clock, duration: 8000, easing: Easing.linear})),
           ])}
@@ -127,7 +126,6 @@ export default class MyMaskedView extends React.Component {
           height={100}
           width={100}
           style={{
-
             left: width / 2 - 50,
             top: height / 2 - 50,
             transform:[
