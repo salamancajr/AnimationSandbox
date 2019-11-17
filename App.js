@@ -6,6 +6,8 @@ import Discovery from './src/screens/Discovery'
 import MonzoCard from './src/screens/MonzoCard'
 import BBC from './src/screens/BBC'
 import LiquidSwipe from './src/screens/LiquidSwipe'
+import Chrome from './src/screens/Chrome'
+import SkyFall from './src/screens/SkyFall'
 
 console.ignoredYellowBox = ['Warning: `-[RCTRootView cancelTouches]`'];
 console.disableYellowBox = true;
@@ -20,13 +22,13 @@ const App = createStackNavigator({
   Discovery: { screen: Discovery, navigationOptions: {
     header: null
   } },
-  MonzoCard: { screen: MonzoCard, navigationOptions: {
+  SkyFall: { screen: SkyFall, navigationOptions: {
     header: null
   } },
   BBC: { screen: BBC, navigationOptions: {
     header: null
   } },
-  LiquidSwipe: { screen: LiquidSwipe, navigationOptions: {
+  Chrome: { screen: Chrome, navigationOptions: {
     header: null
   } }
 })

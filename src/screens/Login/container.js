@@ -122,7 +122,7 @@ class MusicApp extends Component {
                             </Text>
                         </Animated.View>
                     </TapGestureHandler>
-                    <AnimatedTouchable onPress={() => this.props.navigation.navigate('MonzoCard')} style={{...styles.button, backgroundColor:'#2E71DC', opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }]}}>
+                    <AnimatedTouchable onPress={() => this.props.navigation.navigate('SkyFall')} style={{...styles.button, backgroundColor:'#2E71DC', opacity: this.buttonOpacity, transform: [{ translateY: this.buttonY }]}}>
                         <Text style={{ fontSize: 20, fontWeight:'bold', color:'white' }}>
                             SIGN IN WITH FACEBOOK
                         </Text>
@@ -137,7 +137,7 @@ class MusicApp extends Component {
                         </TapGestureHandler>
                         <TextInput placeholderTextColor="black" placeholder="EMAIL" style={styles.textInput}/>
                         <TextInput placeholderTextColor="black" placeholder="PASSWORD" style={styles.textInput}/>
-                        <AnimatedTouchable onPress={() => this.props.navigation.navigate('LiquidSwipe')} style={styles.button}>
+                        <AnimatedTouchable onPress={() => this.props.navigation.navigate('Chrome')} style={styles.button}>
                             <Text style={{ fontSize:20, fontWeight:'bold'}}>
                                 SIGN IN
                             </Text>
