@@ -79,7 +79,7 @@ export default class MyMaskedView extends React.Component {
         {Array(6).fill().map((_, i) => (
           <Cloud index={i}/>
         ))}
-        <PanGestureHandler {...gestureHandler}>
+        <PanGestureHandler { ...gestureHandler }>
 
         <AnimatedSvg
           viewBox="0 0 446 415"
@@ -108,11 +108,16 @@ export default class MyMaskedView extends React.Component {
     </G>
         </Svg>
         <Svg viewBox="0 0 446 415" height={100}
-          width={100} style={{bottom: 20, right: 10, position:'absolute', shadowColor: 'red',
-          shadowOffset: { width: 3, height: 0 },
-          shadowRadius: 3,
-          elevation: 2,
-          shadowOpacity: 0.8, zIndex:565}}>
+          width={100} style={{
+            bottom: 20,
+            right: 10,
+            position:'absolute',
+            shadowColor: 'red',
+            shadowOffset: { width: 3, height: 0 },
+            shadowRadius: 3,
+            elevation: 2,
+            shadowOpacity: 0.8, zIndex:565
+          }}>
         <G>
         <Circle fill="red" cx="236.863" cy="173.695" r="157"/>
         <Circle fill="red"cx="236.863" cy="173.695" r="31"/>
