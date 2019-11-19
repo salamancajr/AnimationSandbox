@@ -21,7 +21,6 @@ export default class Discovery extends React.PureComponent{
   selectStory = async (selectedStory, index) => {
     const position = await this.thumbnails[index].current.measure()
     this.setState({ selectedStory, position })
-    console.log('pos',position)
   }
 
   onRequestClose = () => {

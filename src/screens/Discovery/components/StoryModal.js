@@ -32,6 +32,9 @@ class StoryModal extends Component {
             state: this.animationState,
         }}], { useNativeDriver: true })
     }
+
+    runSpringAlt = (value, destination) => runSpring({ value, dest: destination })
+
     render() {
         const { translateX, translateY, width, height, onGestureEvent } = this
         const { story, onRequestClose } = this.props;
@@ -48,21 +51,21 @@ class StoryModal extends Component {
             <View style={styles.container}>
                 <Animated.Code>
                     {() => block([
-                        cond(eq(this.animationState, State.UNDETERMINED), runSpring(translateX, 0)),
-                        cond(eq(this.animationState, State.UNDETERMINED), runSpring(translateY, 0)),
-                        cond(eq(this.animationState, State.UNDETERMINED), runSpring(width, wWidth)),
-                        cond(eq(this.animationState, State.UNDETERMINED), runSpring(height, wHeight)),
+                        cond(eq(this.animationState, State.UNDETERMINED), this.runSpringAlt(translateX, 0)),
+                        cond(eq(this.animationState, State.UNDETERMINED), this.runSpringAlt(translateY, 0)),
+                        cond(eq(this.animationState, State.UNDETERMINED), this.runSpringAlt(width, wWidth)),
+                        cond(eq(this.animationState, State.UNDETERMINED), this.runSpringAlt(height, wHeight)),
                         cond(and(eq(this.animationState, State.END), lessOrEq(this.velocityY, 0)), block([
-                            runSpring(translateX, 0),
-                            runSpring(translateY, 0),
-                            runSpring(width, wWidth),
-                            runSpring(height, wHeight),
+                            this.runSpringAlt(translateX, 0),
+                            this.runSpringAlt(translateY, 0),
+                            this.runSpringAlt(width, wWidth),
+                            this.runSpringAlt(height, wHeight),
                         ])),
                         cond(and(eq(this.animationState, State.END), greaterThan(this.velocityY, 0)), block([
-                            runSpring(translateX, this.props.position.x),
-                            runSpring(translateY, this.props.position.y),
-                            runSpring(width, this.props.position.width),
-                            runSpring(height, this.props.position.height),
+                            this.runSpringAlt(translateX, this.props.position.x),
+                            this.runSpringAlt(translateY, this.props.position.y),
+                            this.runSpringAlt(width, this.props.position.width),
+                            this.runSpringAlt(height, this.props.position.height),
                             cond(eq(height, this.props.position.height), call([], onRequestClose))
                         ])),
                         cond(eq(this.animationState, State.ACTIVE), set(this.height, interpolate(this.translateY, {
