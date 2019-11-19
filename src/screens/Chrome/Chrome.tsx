@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, SafeAreaView } from "react-native";
 import { tabs, TAB_SIZE, TAB_COLUMNS } from "./Tab";
 import SortableTab from "./SortableTab";
 import Animated from 'react-native-reanimated'
@@ -17,10 +17,13 @@ export default () => {
     y: new Value(Math.floor(index / TAB_COLUMNS) * TAB_SIZE),
   }))
   return (
-    <View style={styles.container}>
-      {tabs.map((tab, index) => (
+    <SafeAreaView style={styles.container}>
+<View>
+{tabs.map((tab, index) => (
         <SortableTab key={tab.id} {...{ tab, oldOffsets, index }} />
       ))}
-    </View>
+</View>
+
+    </SafeAreaView>
   );
 };

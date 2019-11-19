@@ -1,10 +1,10 @@
 import React from 'react';
-import { Dimensions } from 'react-native';
+import { Dimensions,Image } from 'react-native';
 import { PanGestureHandler, State } from "react-native-gesture-handler";
 import Animated, { Easing } from "react-native-reanimated";
 import Rocket from './Rocket'
 import Cloud from './Cloud'
-import Svg, { Path } from "react-native-svg";
+import Svg, { Path, G, Circle } from "react-native-svg";
 
 import { onGestureEvent, withOffset, interpolateColor, loop } from "react-native-redash";
 
@@ -72,40 +72,10 @@ export default class MyMaskedView extends React.Component {
   }
 
   render() {
-    const { progress, gestureHandler, rValInt, opacity1, cloudTranslate, cloudY } = this
+    const { gestureHandler, rValInt, opacity1 } = this
 
-    const clock = new Clock()
-    const state = {
-      position: this.progress,//from or origin
-      finished: new Value(0),
-      time: new Value(0),
-      frameTime: new Value(0),
-
-    }
-
-    const config = {
-
-      toValue: multiply((width + 100) * -1),
-      duration: 6000,
-      easing: Easing.linear,
-    }
     return (
       <Animated.View style={{flex:1, backgroundColor: rValInt, opacity: opacity1 }}>
-
-      {/* <Animated.Code>
-        {() =>
-          block([
-            //set(progress, loop({ clock, duration: 6000, easing: Easing.linear })),
-            timing(clock, state, config),
-            // cond(eq(state.finished, 1), [
-            // set(state.finished, 0),
-            // set(state.time, 0),
-            // set(state.frameTime, 0),
-            // set(state.position, 0),
-            // timing(clock, state, config)
-          // ]),
-        ])}
-        </Animated.Code> */}
         {Array(6).fill().map((_, i) => (
           <Cloud index={i}/>
         ))}
@@ -127,6 +97,29 @@ export default class MyMaskedView extends React.Component {
             <Rocket />
           </AnimatedSvg>
         </PanGestureHandler>
+        <Svg viewBox="0 0 446 415" height={100}
+          width={100} style={{bottom: 20, left: 10, position:'absolute', elevation: 6, shadowColor: 'black',
+          shadowOffset: { width: 3, height: 0 },
+          shadowRadius: 3,
+          shadowOpacity: 0.8, zIndex:565}}>
+        <G>
+        <Circle fill="blue" cx="236.863" cy="173.695" r="157"/>
+        <Circle fill="red"cx="236.863" cy="173.695" r="61"/>
+    </G>
+        </Svg>
+        <Svg viewBox="0 0 446 415" height={100}
+          width={100} style={{bottom: 20, right: 10, position:'absolute', shadowColor: 'red',
+          shadowOffset: { width: 3, height: 0 },
+          shadowRadius: 3,
+          elevation: 2,
+          shadowOpacity: 0.8, zIndex:565}}>
+        <G>
+        <Circle fill="red" cx="236.863" cy="173.695" r="157"/>
+        <Circle fill="red"cx="236.863" cy="173.695" r="31"/>
+
+      </G>
+        </Svg>
+
       </Animated.View>
     );
   }

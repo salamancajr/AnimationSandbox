@@ -20,19 +20,25 @@ const App = createStackNavigator({
   Login: { screen: Login, navigationOptions: {
     header: null
   } },
+  LiquidSwipe: { screen: LiquidSwipe, navigationOptions: {
+    header: null
+  } },
   SharedElements: { screen: SharedElements, navigationOptions: {
     header: null
   } },
   Discovery: { screen: Discovery, navigationOptions: {
     header: null
   } },
-  SkyFall: { screen: SkyFall, navigationOptions: {
+  MonzoCard: { screen: MonzoCard, navigationOptions: {
     header: null
   } },
   BBC: { screen: BBC, navigationOptions: {
     header: null
   } },
   Chrome: { screen: Chrome, navigationOptions: {
+    header: null
+  } },
+  SkyFall: { screen: SkyFall, navigationOptions: {
     header: null
   } }
 })

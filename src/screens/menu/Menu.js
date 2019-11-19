@@ -40,6 +40,8 @@ class Menu extends Component {
               <Button text={"Snapchat Discovery"} onPress={() => this.props.navigation.navigate('Discovery')} />
               <Button text={"Monzo Card Selection"} onPress={() => this.props.navigation.navigate('MonzoCard')} />
               <Button text={"Shared Elements"} onPress={() => this.props.navigation.navigate('SharedElements')} />
+              <Button text={"Chrome"} onPress={() => this.props.navigation.navigate('Chrome')} />
+              <Button text={"SkyFall"} onPress={() => this.props.navigation.navigate('SkyFall')} />
 
           </SafeAreaView>
 
