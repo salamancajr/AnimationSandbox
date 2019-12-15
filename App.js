@@ -10,8 +10,8 @@ import LiquidSwipe from './src/screens/LiquidSwipe'
 import Chrome from './src/screens/Chrome'
 import SkyFall from './src/screens/SkyFall'
 
-console.ignoredYellowBox = ['Warning: `-[RCTRootView cancelTouches]`'];
-console.disableYellowBox = true;
+//console.ignoredYellowBox = ['Warning: `-[RCTRootView cancelTouches]`'];
+// console.disableYellowBox = true;
 
 const App = createStackNavigator({
   Menu: { screen: Menu, navigationOptions: {

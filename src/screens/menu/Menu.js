@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import styles from './Menu.style';
 import Button from '../../components/button/Button.tsx';
-import AccordionContent from '../../AccordionContent'
+import AccordionContent from 'react-native-reanimated-collapsible'
 import Icon from 'react-native-vector-icons/AntDesign'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
